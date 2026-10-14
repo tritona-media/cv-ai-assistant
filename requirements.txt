@@ -1,3 +1,5 @@
 markdownify
 beautifulsoup4
 playwright
+langchain-openai
+dotenv
