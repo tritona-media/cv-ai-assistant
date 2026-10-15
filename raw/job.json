@@ -1,0 +1,102 @@
+{
+  "document_type": "job_posting",
+  "job_title": "AI Solution Architect - Agentic AI & Foundation Models (f/m/x)",
+  "company": "BMW Group",
+  "job_summary": "The role involves designing, co-creating, and implementing enterprise-scale agentic AI systems, translating business requirements into AI solution architectures, and integratingvarious technologies into reliable end-to-end solutions.",
+  "job_role": "The candidate will be responsible for architecting and delivering AI solutions, guiding implementation teams, and improving enterprise AI platforms.",
+  "responsibilities": [
+    "Design and implement enterprise-scale agentic AI systems",
+    "Translate business requirements into AI solution architectures",
+    "Leverage modern agentic AI frameworks and orchestration technologies",
+    "Combine LLMs, reasoning models, and enterprise applications into solutions",
+    "Build production-ready AI applications using modern software engineering principles",
+    "Integrate enterprise systems and databases into AI workflows",
+    "Define architecture standards and reusable design patterns for AI solutions"
+  ],
+  "job_details": {
+    "location": "München",
+    "employment_type": "Vollzeit",
+    "work_model": null
+  },
+  "salary": {
+    "min": null,
+    "max": null,
+    "currency": null,
+    "period": null
+  },
+  "requirements": [
+    {
+      "category": "education",
+      "name": "University degree in Computer Science or related field",
+      "importance": "must_have",
+      "operator": "contains",
+      "value": "Computer Science",
+      "unit": null,
+      "source_text": "University degree in Computer Science, Artificial Intelligence or a comparable technical field, ideally with a master’s degree or PhD."
+    },
+    {
+      "category": "experience",
+      "name": "5+ years of software engineering experience",
+      "importance": "must_have",
+      "operator": ">=",
+      "value": 5,
+      "unit": "years",
+      "source_text": "5+ years of software engineering experience, including experience in AI development and proven hands-on expertise in designing and building enterprise AI and agentic AI solutions."
+    },
+    {
+      "category": "skill",
+      "name": "Strong consulting and stakeholder-management skills",
+      "importance": "must_have",
+      "operator": "has_skill",
+      "value": true,
+      "unit": null,
+      "source_text": "Strong consulting and stakeholder-management skills, enabling you to align business units, use case teams and platform teams and drive AI initiatives from idea to enterprise-scale adoption."
+    },
+    {
+      "category": "skill",
+      "name": "Very good hands-on software engineering skills including Python",
+      "importance": "must_have",
+      "operator": "has_skill",
+      "value": true,
+      "unit": null,
+      "source_text": "Very good hands-on software engineering skills, including Python, software architecture, clean code and automated testing."
+    },
+    {
+      "category": "skill",
+      "name": "Mastery of agentic AI frameworks",
+      "importance": "must_have",
+      "operator": "has_skill",
+      "value": true,
+      "unit": null,
+      "source_text": "You master agentic AI frameworks such as LangGraph, CrewAI, AutoGen or OpenAI Agents SDK, including MCP and tool calling."
+    },
+    {
+      "category": "skill",
+      "name": "Strong expertise in LLM engineering",
+      "importance": "must_have",
+      "operator": "has_skill",
+      "value": true,
+      "unit": null,
+      "source_text": "Strong expertise in LLM engineering, including RAG, context engineering, multi-agent orchestration and evaluation as well as enterprise AI solution design."
+    },
+    {
+      "category": "experience",
+      "name": "Experience in building production-grade cloud solutions",
+      "importance": "must_have",
+      "operator": "has_experience",
+      "value": true,
+      "unit": null,
+      "source_text": "Experience in building production-grade cloud solutions using AWS or Azure, CI/CD and MLOps."
+    },
+    {
+      "category": "skill",
+      "name": "Fluent English",
+      "importance": "must_have",
+      "operator": "has_skill",
+      "value": true,
+      "unit": null,
+      "source_text": "strong problem-solving skills and fluent English."
+    }
+  ],
+  "open_questions": []
+}

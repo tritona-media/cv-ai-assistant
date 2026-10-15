@@ -1,0 +1,183 @@
+{
+  "metadata": {
+    "source_format": "pdf",
+    "language": "de",
+    "parsing_warnings": []
+  },
+  "personal_info": {
+    "full_name": "Minh Ngo",
+    "email": "minh.ngo@gmx.de",
+    "phone": "+49 17620482871",
+    "location": "Max-Bill-Str. 4, 80807 München, Deutschland",
+    "linkedin_url": null,
+    "portfolio_url": null
+  },
+  "professional_summary": "Ich habe den Anspruch die Projekte in denen ich arbeite zum Erfolg zu bringen. Entsprechend bin ich engagiert und zuverlässig und bringe die entsprechende Mentalität mit.",
+  "work_experience": [
+    {
+      "job_title": "Software-Entwickler/in",
+      "company": "Valtech Mobility GmbH",
+      "location": "München",
+      "start_date": "2016-05",
+      "end_date": null,
+      "is_current": true,
+      "description": null,
+      "responsibilities": [
+        "Entwicklung von Infotainment Apps in JavaScript",
+        "Entwicklung von Infotainment Apps in Angular 2+",
+        "Entwicklung von Infotainment Apps in Android 11+"
+      ],
+      "technologies": [
+        "JavaScript",
+        "RxJs",
+        "Protractor",
+        "Gulp",
+        "KoaJs",
+        "NodeJs",
+        "TypeScript",
+        "Jest",
+        "Jasmine",
+        "Karma",
+        "HTML5",
+        "CSS3",
+        "Kotlin",
+        "Kotlin Coroutines",
+        "Kotlin Flows",
+        "Android Jetpack",
+        "Koin",
+        "ProGuard",
+        "OkHttp",
+        "Retrofit",
+        "Cucumber",
+        "Room"
+      ]
+    },
+    {
+      "job_title": "Software-Entwickler/in",
+      "company": "NTT Data",
+      "location": "München",
+      "start_date": "2010-06",
+      "end_date": "2016-05",
+      "is_current": false,
+      "description": null,
+      "responsibilities": [
+        "Erweiterung der Unified Sales Platform für BMW Händler mit neuen Features",
+        "Entwicklung von wiederverwendbaren Formular Komponenten",
+        "Entwicklung des neuen MINI Online-Konfigurators",
+        "Entwicklung der neuen BMW Website mit dem CMS Adobe AEM (ehem. Day/Adobe CQ5)",
+        "Entwicklung an BMW Webanwendung zur Auswertung von Vertriebskennzahlen"
+      ],
+      "technologies": [
+        "JSF2",
+        "PrimeFaces",
+        "EJB3",
+        "Glassfish",
+        "Java 1.7",
+        "Flyway",
+        "Maven",
+        "JavaScript",
+        "LESS",
+        "SVN",
+        "Grunt",
+        "Lineman",
+        "Protractor",
+        "Jasmine",
+        "AngularJs",
+        "HTML5",
+        "CSS3",
+        "jQuery",
+        "SASS",
+        "Git",
+        "Grunt",
+        "Java",
+        "JSP",
+        "Struts",
+        "PL/SQL"
+      ]
+    },
+    {
+      "job_title": "Software-Entwickler/in",
+      "company": "GMX",
+      "location": "München",
+      "start_date": "2007-06",
+      "end_date": "2010-06",
+      "is_current": false,
+      "description": null,
+      "responsibilities": [
+        "Entwicklung an einem Online Chat"
+      ],
+      "technologies": [
+        "Qooxdoo",
+        "JavaScript"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Hochschulabschluss",
+      "institution": "Technische Universität München",
+      "location": "München",
+      "start_date": null,
+      "end_date": "2004-01",
+      "field_of_study": "Informatik"
+    }
+  ],
+  "skills": {
+    "technical": [
+      "JavaScript",
+      "RxJs",
+      "Protractor",
+      "Gulp",
+      "KoaJs",
+      "NodeJs",
+      "TypeScript",
+      "Jest",
+      "Jasmine",
+      "Karma",
+      "HTML5",
+      "CSS3",
+      "Kotlin",
+      "Kotlin Coroutines",
+      "Kotlin Flows",
+      "Android Jetpack",
+      "Koin",
+      "ProGuard",
+      "OkHttp",
+      "Retrofit",
+      "Cucumber",
+      "Room",
+      "JSF2",
+      "PrimeFaces",
+      "EJB3",
+      "Glassfish",
+      "Java 1.7",
+      "Flyway",
+      "Maven",
+      "LESS",
+      "SVN",
+      "Grunt",
+      "Lineman",
+      "AngularJs",
+      "jQuery",
+      "SASS",
+      "Git",
+      "Struts",
+      "PL/SQL"
+    ],
+    "soft": [],
+    "tools": [],
+    "other": []
+  },
+  "languages": [
+    {
+      "language": "Deutsch",
+      "proficiency": "fließend"
+    },
+    {
+      "language": "Englisch",
+      "proficiency": "fließend"
+    }
+  ],
+  "certifications": [],
+  "projects": []
+}

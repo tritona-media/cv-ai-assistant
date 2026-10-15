@@ -1,3 +1,4 @@
+import os
 from typing import Literal
 
 from bs4 import BeautifulSoup
@@ -128,9 +129,9 @@ def fetch_job_markdown(url: str) -> str:
 
 def analyze_job_markdown(markdown: str) -> dict[str, object]:
     """Extract structured job information from Markdown with an OpenAI model."""
-    model = ChatOpenAI(model="gpt-4o-mini", temperature=0).with_structured_output(
-        JobPostingExtraction
-    )
+    model = ChatOpenAI(
+        model=os.environ["OPENAI_MODEL"], temperature=0, store=False
+    ).with_structured_output(JobPostingExtraction)
     result = model.invoke(
         [
             (
