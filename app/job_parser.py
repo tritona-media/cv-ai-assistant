@@ -1,11 +1,14 @@
+import ipaddress
 import os
+import socket
 from typing import Literal
+from urllib.parse import urlsplit
 
 from bs4 import BeautifulSoup
 from langchain_openai import ChatOpenAI
 from markdownify import markdownify
 from pydantic import BaseModel, Field
-from playwright.sync_api import sync_playwright
+from playwright.sync_api import Request, Route, sync_playwright
 
 
 class JobRequirement(BaseModel):
@@ -75,18 +78,70 @@ class JobPostingExtraction(BaseModel):
     open_questions: list[str]
 
 
+def validate_public_url(url: str, resolved_hosts: set[str] | None = None) -> None:
+    """Reject non-HTTP URLs and hosts that resolve to non-public IP addresses."""
+    parsed_url = urlsplit(url)
+    if parsed_url.scheme not in {"http", "https"} or not parsed_url.hostname:
+        raise ValueError("Enter a public HTTP or HTTPS URL.")
+    if parsed_url.username or parsed_url.password:
+        raise ValueError("URLs containing credentials are not allowed.")
+
+    hostname = parsed_url.hostname
+    try:
+        port = parsed_url.port
+    except ValueError as exc:
+        raise ValueError("The URL contains an invalid port.") from exc
+
+    if resolved_hosts is not None and hostname in resolved_hosts:
+        return
+
+    try:
+        addresses = {
+            ipaddress.ip_address(result[4][0])
+            for result in socket.getaddrinfo(
+                hostname, port or (443 if parsed_url.scheme == "https" else 80),
+                type=socket.SOCK_STREAM,
+            )
+        }
+    except (OSError, ValueError) as exc:
+        raise ValueError("The URL host could not be resolved.") from exc
+
+    if not addresses or any(not address.is_global for address in addresses):
+        raise ValueError("Only URLs hosted on public IP addresses are allowed.")
+
+    if resolved_hosts is not None:
+        resolved_hosts.add(hostname)
+
+
 def fetch_job_markdown(url: str) -> str:
     """Fetch a job page in Chromium and return its main content as Markdown."""
+    resolved_hosts: set[str] = set()
+    validate_public_url(url, resolved_hosts)
+
     with sync_playwright() as playwright:
         browser = playwright.chromium.launch()
-        page = browser.new_page()
-        response = page.goto(url, wait_until="domcontentloaded", timeout=30_000)
-        if response is None:
-            raise RuntimeError(f"Navigation did not return a response for {url}")
-        if not response.ok:
-            raise RuntimeError(f"Request for {url} failed with HTTP {response.status}")
-        html = response.body()
-        browser.close()
+
+        def validate_request(route: Route, request: Request) -> None:
+            try:
+                validate_public_url(request.url, resolved_hosts)
+            except ValueError:
+                route.abort("blockedbyclient")
+            else:
+                route.continue_()
+
+        try:
+            page = browser.new_page()
+            page.route("**/*", validate_request)
+            response = page.goto(url, wait_until="domcontentloaded", timeout=30_000)
+            if response is None:
+                raise RuntimeError(f"Navigation did not return a response for {url}")
+            if not response.ok:
+                raise RuntimeError(
+                    f"Request for {url} failed with HTTP {response.status}"
+                )
+            html = response.body()
+        finally:
+            browser.close()
 
     soup = BeautifulSoup(html, "html.parser")
     main_content = soup.find("main") or soup.find("article") or soup.body or soup

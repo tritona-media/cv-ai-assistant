@@ -2,4 +2,7 @@ markdownify
 beautifulsoup4
 playwright
 langchain-openai
-dotenv
+python-dotenv
+fastapi
+uvicorn[standard]
+pydantic
